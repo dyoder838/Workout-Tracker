@@ -14,53 +14,137 @@
 </head>
 
 <body>
-<main class="container">
-    <header class="row">
-        
-        <section class="col-xl-12">
-            <h1>Web Developer Workout</h1>
+
+    <main class="container">
+
+        <header class="row">
+
+            <section class="col-xl-12">
+                <h1>Web Developer Workout</h1>
+            </section>
+
+        </header>
+
+        <!-- new routine input -->
+        <section class="row">
+
+            <article class="col-xl-12">
+
+                <form action="/api/routine/submit" method="post">
+
+                    <div class="form-group">
+
+                        <label for="routineNameIn">Routine Name</label>
+                        <input type="routinename" class="form-control" id="routineNameIn">
+
+                    </div>
+
+                    <button id="routineSubmit" type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+            </article>
+
         </section>
 
-    </header>
+        <!-- select previous routine -->
+        <section class="row">
 
-    <section class="row">
+            <article class="col-xl-12">
 
-        <article class="col-xl-12">
+                <form action="/api/routine/submit" method="post">
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Workout</button>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Create a new routine</a>
-                    <a class="dropdown-item" href="#">Use an existing routine</a>
-                    <a class="dropdown-item" href="#">Edit existing routine</a>
-                    <a class="dropdown-item" href="#">Delete existing routine</a>
-                  </div>
+                    <div class="form-group">
+
+                        <label for="prevRoutineNameIn">Previous Routine Name</label>
+                        <a href=""></a>
+
+                    </div>
+
+                    <button id="routineSelect" type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+            </article>
+
+        </section>
+
+
+        <!-- create workout form -->
+        <section class="row">
+
+            <form action="/api/workout/submit" method="post" class="col-xl-12">
+
+                <article class="card">
+
+                    <h5 class="card-header">Add Workouts to Routine Name</h5>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Exercise</span>
+                            </div>
+                            <input name="exercise" type="text" class="form-control" aria-label="Sizing example input">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Duration of exercise</span>
+                            </div>
+                            <input name="time" type="text" class="form-control" aria-label="Sizing example input">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Notes</span>
+                            </div>
+                            <input name="notes" type="text" class="form-control" aria-label="Sizing example input">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Face Palm count</span>
+                            </div>
+                            <input name="facepalms" type="text" class="form-control" aria-label="Sizing example input">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">Google search count</span>
+                            </div>
+                            <input name="googlesearches" type="text" class="form-control"
+                                aria-label="Sizing example input">
+                        </div>
+
+                        <button id="workoutSubmit" type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+
+                </article>
+
+            </form>
+
+        </section>
+
+        <!-- populate routine/workout area -->
+        <section class="row">
+
+            <article class="col-xl-12">
+
+                <div class="card">
+                    <h2 id="routine" class="card-header">
+                        routine
+                    </h2>
+                    <div class="card-body">
+                        <h3 id="exercise" class="card-title">Exercise Name</h3>
+                        <p id="time" class="card-text">time</p>
+                        <p id="notes" class="card-text">notes</p>
+                        <p id="facepalms" class="card-text">facepalms</p>
+                        <p id="googlesearches" class="card-text">google searches</p>
+                    </div>
                 </div>
-                <input type="text" class="form-control" aria-label="Text input with dropdown button">
-              </div>
 
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1"></label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-        </article>
+            </article>
 
-    </section>
+        </section>
 
-</main>
+
+    </main>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
