@@ -1,0 +1,100 @@
+
+
+<main class="container">
+
+    <header class="row">
+
+        <section class="col-xl-12">
+            <h1>Web Developer Workout</h1>
+        </section>
+
+    </header>
+
+    <!-- new routine input -->
+    <section class="row">
+
+        <article class="col-xl-12">
+
+            <form >
+
+                <div class="form-group">
+
+                    <label for="workoutNameIn">Name your Workout</label>
+                    <input type="text" class="form-control" id="workoutNameIn">
+
+                </div>
+
+                <button id="workoutSubmit" type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+        </article>
+
+    </section>
+{{#if workouts}}
+    {{#each workouts}}
+    
+
+    <!-- create workout form -->
+    <section class="row">
+
+        <form class="col-xl-12">
+
+            <article class="card">
+
+                <h5 class="card-header">Add Workouts to Routine Name</h5>
+                <div class="card-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Exercise</span>
+                        </div>
+                        <input name="exercise" type="text" class="form-control" aria-label="Sizing example input">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Duration of exercise</span>
+                        </div>
+                        <input name="time" type="text" class="form-control" aria-label="Sizing example input">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Notes</span>
+                        </div>
+                        <input name="notes" type="text" class="form-control" aria-label="Sizing example input">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Face Palm count</span>
+                        </div>
+                        <input name="facepalms" type="text" class="form-control" aria-label="Sizing example input">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Google search count</span>
+                        </div>
+                        <input name="googlesearches" type="text" class="form-control" aria-label="Sizing example input">
+                    </div>
+
+                    <button id="workoutSubmit" type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+
+            </article>
+
+        </form>
+
+    </section>
+
+    <!-- populate routine/workout area -->
+    <section class="row">
+
+        <article class="col-xl-12">
+
+            {{> workout}}
+
+        </article>
+
+    </section>
+{{/each}}
+{{/if}}
+</main>
